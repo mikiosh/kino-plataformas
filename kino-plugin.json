@@ -1,0 +1,54 @@
+{
+  "id": "plataformas-catalogo",
+  "name": "Catálogo Plataformas",
+  "version": "0.1.0",
+  "apiVersion": 6,
+  "entry": "plugin.js",
+  "description": "Películas y series por plataforma y país, con sección LGBT+. Incluye 39 plataformas precargadas y directorio ampliable con una llave TMDB propia. Solo catálogo: usa tus otros plugins para reproducir.",
+  "hosts": [
+    "api.themoviedb.org"
+  ],
+  "capabilities": [
+    "home",
+    "browse",
+    "search",
+    "episodes",
+    "resolve"
+  ],
+  "catalogOnly": true,
+  "section": {
+    "label": "Plataformas",
+    "labelEn": "Platforms"
+  },
+  "settings": [
+    {
+      "key": "region",
+      "type": "text",
+      "label": "País de disponibilidad",
+      "hint": "Código de dos letras: MX, ES, AR, US...",
+      "default": "MX"
+    },
+    {
+      "key": "mode",
+      "type": "select",
+      "label": "Disponibilidad por plataforma",
+      "default": "stream",
+      "options": [
+        {
+          "value": "stream",
+          "label": "Suscripción, gratis y con anuncios"
+        },
+        {
+          "value": "all",
+          "label": "Incluir alquiler y compra"
+        }
+      ]
+    },
+    {
+      "key": "tmdbKey",
+      "type": "password",
+      "label": "Llave TMDB opcional",
+      "hint": "Llave v3 o token de lectura v4. Sin ella se usan 39 plataformas precargadas."
+    }
+  ]
+}
